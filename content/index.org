@@ -1,0 +1,29 @@
+#+title: CommStack Backend Documentation
+
+* Events
+
+[[./refinery.org][Refinery]] App publishes events.
+
+** Bullion Received
+#+begin_src json
+{
+  "bullionId": "HRE-SG-24050004",
+  "customer": "HRE-AAA-001",
+  "mine": "DID-1658954",
+  "paymentCode": "SG",
+  "items": [
+    {
+      "weight": {
+        "kilograms": 12.0
+      },
+      "descriptors": [
+        "Cu"
+      ],
+      "type": "ingot"
+    }
+  ],
+  "time": "2024-05-14T13:53:54.6792758+03:00",
+  "user": "JonathanPeel",
+  "event": "BullionReceived"
+}
+#+end_src
