@@ -2,9 +2,9 @@
 
 * Events
 
-[[./refinery.org][Refinery]] App publishes events.
+** Buying Process
 
-** Bullion Received
+*** Bullion Received
 #+begin_src json
 {
   "bullionId": "HRE-SG-24050004",
@@ -25,5 +25,35 @@
   "time": "2024-05-14T13:53:54.6792758+03:00",
   "user": "JonathanPeel",
   "event": "BullionReceived"
+}
+#+end_src
+
+*** Specific Gravity Signoff
+
+#+begin_src json
+{
+  "bullionId": "HRE-SG-24050004",
+  "fineness": 876.0,
+  "time": "2024-05-14T15:26:15.167155+03:00",
+  "user": "JonathanPeel",
+  "event": "SpecificGravitySignedOff"
+}
+#+end_src
+
+*** Price Approved (SG)
+
++ routing key :: ~commstack.refinery.PriceApprovedEvent~
+
+#+begin_src json
+{
+  "bullionId": "HRE-SG-24050004",
+  "time": "2024-05-14T15:26:15.167155+03:00",
+  "user": "JonathanPeel",
+  "event": "PriceApproved",
+  "goldPayable": { "kilograms": 11.0 },
+  "royaltyCharges": { "usd": 123.0 },
+  "refineryCharges": { "usd": 123.0 },
+  "otherCharges": { "usd": 123.0 },
+  "net": { "usd": 123.0 },
 }
 #+end_src
