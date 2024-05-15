@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-05-15 Wed 08:58 -->
+<!-- 2024-05-15 Wed 13:23 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>CommStack Backend Documentation</title>
@@ -247,26 +247,32 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org4850d3c">Events</a>
+<li><a href="#orgfa48f36">Events</a>
 <ul>
-<li><a href="#org2dfec5a">Bullion Received</a></li>
+<li><a href="#org62676af">Buying Process</a>
+<ul>
+<li><a href="#org9a396b3">Bullion Received</a></li>
+<li><a href="#orgccfed5c">Specific Gravity Signoff</a></li>
+<li><a href="#org98551b7">Price Approved (SG)</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org4850d3c" class="outline-2">
-<h2 id="org4850d3c">Events</h2>
-<div class="outline-text-2" id="text-org4850d3c">
-<p>
-<a href="./refinery.html">Refinery</a> App publishes events.
-</p>
+<div id="outline-container-orgfa48f36" class="outline-2">
+<h2 id="orgfa48f36">Events</h2>
+<div class="outline-text-2" id="text-orgfa48f36">
 </div>
-
-<div id="outline-container-org2dfec5a" class="outline-3">
-<h3 id="org2dfec5a">Bullion Received</h3>
-<div class="outline-text-3" id="text-org2dfec5a">
+<div id="outline-container-org62676af" class="outline-3">
+<h3 id="org62676af">Buying Process</h3>
+<div class="outline-text-3" id="text-org62676af">
+</div>
+<div id="outline-container-org9a396b3" class="outline-4">
+<h4 id="org9a396b3">Bullion Received</h4>
+<div class="outline-text-4" id="text-org9a396b3">
 <div class="org-src-container">
 <pre class="src src-json">{
   "bullionId": "HRE-SG-24050004",
@@ -292,10 +298,51 @@ for the JavaScript code in this tag.
 </div>
 </div>
 </div>
+
+<div id="outline-container-orgccfed5c" class="outline-4">
+<h4 id="orgccfed5c">Specific Gravity Signoff</h4>
+<div class="outline-text-4" id="text-orgccfed5c">
+<div class="org-src-container">
+<pre class="src src-json">{
+  "bullionId": "HRE-SG-24050004",
+  "fineness": 876.0,
+  "time": "2024-05-14T15:26:15.167155+03:00",
+  "user": "JonathanPeel",
+  "event": "SpecificGravitySignedOff"
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org98551b7" class="outline-4">
+<h4 id="org98551b7">Price Approved (SG)</h4>
+<div class="outline-text-4" id="text-org98551b7">
+<dl class="org-dl">
+<dt>routing key</dt><dd><code>commstack.refinery.PriceApprovedEvent</code></dd>
+</dl>
+
+<div class="org-src-container">
+<pre class="src src-json">{
+  "bullionId": "HRE-SG-24050004",
+  "time": "2024-05-14T15:26:15.167155+03:00",
+  "user": "JonathanPeel",
+  "event": "PriceApproved",
+  "goldPayable": { "kilograms": 11.0 },
+  "royaltyCharges": { "usd": 123.0 },
+  "refineryCharges": { "usd": 123.0 },
+  "otherCharges": { "usd": 123.0 },
+  "net": { "usd": 123.0 },
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2024-05-15 Wed 08:58</p>
+<p class="date">Created: 2024-05-15 Wed 13:23</p>
 </div>
 </body>
 </html>
