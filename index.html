@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-05-15 Wed 13:23 -->
+<!-- 2024-05-16 Thu 12:57 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>CommStack Backend Documentation</title>
@@ -247,13 +247,14 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgfa48f36">Events</a>
+<li><a href="#orgf3bfb98">Events</a>
 <ul>
-<li><a href="#org62676af">Buying Process</a>
+<li><a href="#org361771d">Buying Process</a>
 <ul>
-<li><a href="#org9a396b3">Bullion Received</a></li>
-<li><a href="#orgccfed5c">Specific Gravity Signoff</a></li>
-<li><a href="#org98551b7">Price Approved (SG)</a></li>
+<li><a href="#orge0dd1b0">Bullion Received</a></li>
+<li><a href="#orgbf73c8b">Specific Gravity Signoff</a></li>
+<li><a href="#org5bd434a">Price Approved (SG)</a></li>
+<li><a href="#org3b99721">Weight After Melton</a></li>
 </ul>
 </li>
 </ul>
@@ -262,17 +263,17 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orgfa48f36" class="outline-2">
-<h2 id="orgfa48f36">Events</h2>
-<div class="outline-text-2" id="text-orgfa48f36">
+<div id="outline-container-orgf3bfb98" class="outline-2">
+<h2 id="orgf3bfb98">Events</h2>
+<div class="outline-text-2" id="text-orgf3bfb98">
 </div>
-<div id="outline-container-org62676af" class="outline-3">
-<h3 id="org62676af">Buying Process</h3>
-<div class="outline-text-3" id="text-org62676af">
+<div id="outline-container-org361771d" class="outline-3">
+<h3 id="org361771d">Buying Process</h3>
+<div class="outline-text-3" id="text-org361771d">
 </div>
-<div id="outline-container-org9a396b3" class="outline-4">
-<h4 id="org9a396b3">Bullion Received</h4>
-<div class="outline-text-4" id="text-org9a396b3">
+<div id="outline-container-orge0dd1b0" class="outline-4">
+<h4 id="orge0dd1b0">Bullion Received</h4>
+<div class="outline-text-4" id="text-orge0dd1b0">
 <div class="org-src-container">
 <pre class="src src-json">{
   "bullionId": "HRE-SG-24050004",
@@ -299,9 +300,9 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orgccfed5c" class="outline-4">
-<h4 id="orgccfed5c">Specific Gravity Signoff</h4>
-<div class="outline-text-4" id="text-orgccfed5c">
+<div id="outline-container-orgbf73c8b" class="outline-4">
+<h4 id="orgbf73c8b">Specific Gravity Signoff</h4>
+<div class="outline-text-4" id="text-orgbf73c8b">
 <div class="org-src-container">
 <pre class="src src-json">{
   "bullionId": "HRE-SG-24050004",
@@ -315,9 +316,9 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org98551b7" class="outline-4">
-<h4 id="org98551b7">Price Approved (SG)</h4>
-<div class="outline-text-4" id="text-org98551b7">
+<div id="outline-container-org5bd434a" class="outline-4">
+<h4 id="org5bd434a">Price Approved (SG)</h4>
+<div class="outline-text-4" id="text-org5bd434a">
 <dl class="org-dl">
 <dt>routing key</dt><dd><code>commstack.refinery.PriceApprovedEvent</code></dd>
 </dl>
@@ -338,11 +339,39 @@ for the JavaScript code in this tag.
 </div>
 </div>
 </div>
+
+<div id="outline-container-org3b99721" class="outline-4">
+<h4 id="org3b99721">Weight After Melton</h4>
+<div class="outline-text-4" id="text-org3b99721">
+<dl class="org-dl">
+<dt>routing key</dt><dd><code>commstack.refinery.WeightAfterMeltCompleted</code></dd>
+</dl>
+
+<div class="org-src-container">
+<pre class="src src-json">{
+  "event": "WeightAfterMeltCompleted",
+  "user": "JonathanPeel",
+  "time": "2024-05-16T12:27:10.0397771+00:00",
+  "bullionId": "HRE-BBF-24050001",
+  "IngotWeigh": {
+    "kilograms": 1.0
+  },
+  "SampleWeight": {
+    "kilograms": 12.0
+  },
+  "totalWeight": {
+    "kilograms": 13.0
+  }
+}
+</pre>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2024-05-15 Wed 13:23</p>
+<p class="date">Created: 2024-05-16 Thu 12:57</p>
 </div>
 </body>
 </html>
