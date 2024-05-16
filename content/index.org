@@ -57,3 +57,25 @@
   "net": { "usd": 123.0 },
 }
 #+end_src
+
+*** Weight After Melton
+
++ routing key :: ~commstack.refinery.WeightAfterMeltCompleted~
+
+#+begin_src json
+{
+  "event": "WeightAfterMeltCompleted",
+  "user": "JonathanPeel",
+  "time": "2024-05-16T12:27:10.0397771+00:00",
+  "bullionId": "HRE-BBF-24050001",
+  "IngotWeigh": {
+    "kilograms": 1.0
+  },
+  "SampleWeight": {
+    "kilograms": 12.0
+  },
+  "totalWeight": {
+    "kilograms": 13.0
+  }
+}
+#+end_src
