@@ -79,3 +79,22 @@
   }
 }
 #+end_src
+
+*** Fire Assay Batch Sign Offenbach
+
++ routing key :: commstack.refinery.FireAssayBatchSignOff
+
+#+begin_src json
+{
+  "batchId": "240520-2",
+  "bullion": [
+    {
+      "bullionId": "HRE-BBF-24050001",
+      "fineness": 996.4875
+    }
+  ],
+  "time": "2024-05-20T05:43:19.5480169+03:00",
+  "user": "JonathanPeel",
+  "event": "FireAssayBatchSignOff"
+}
+#+end_src
