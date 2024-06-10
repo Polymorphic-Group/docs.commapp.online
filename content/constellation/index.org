@@ -1,0 +1,57 @@
+#+title: Constellation
+
+* Constellation
+
+** Invoice Forms
+
+Invoice forms allow table rows to be added inlinde while capturing data.
+
+These instructions assume knowlage on configuring a standard permssions.
+
+*** Basic FLL Setup
+
+**** Musketeer Configuration
+
+Three tables are required in Muskteer.
+
+[[./invoice-basic-setup-fll.png]]
+
++ Item source table (1) ::
+  It is advised that this is a library table.
+  This holds the deffinitions of items that will be selected on the form.
+  If the form is for invoices this will hold a list of possible broducs that are being invoiced for.
+
++ Main table (2) ::
+  This is the main table that is used to hold invoices, receiepts, purchase orders, etc.
+
++ Item table (3) ::
+  It is advised that this inherits from the source table, so long that the source table is a library.
+  This table holds line items of the main record.
+  These are imported from the source table.
+
+**** Permssion Configuration
+
+Two permissions are required to be created.
+
+***** The Item permission
+
+Needs to reference the item table (3).
+
+***** The Main permssion
+
+Needs to reference the main table (2).
+
+To add the input table into the form, two things need to be done:
+
+1. The item permission needs to be added as level 2.
+
+2. A special line[fn:: On an invoice form, field rows will be broken into rows. The item table field should be on it's own row.] needs to be added to the /Form Add/ field.
+   This needs to be in the format ,without spaces, item permission, colon, and the FLL ID of the Item Source table (1), ~item-permission:source-fll~.
+
+#+CAPTION: /Form Add/ example.
+#+begin_src txt
+Title
+Description Date Address
+invoice-line-items:1234
+#+end_src
+

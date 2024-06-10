@@ -1,0 +1,100 @@
+#+title: Refinery
+
+* Refinery Events
+
+** Buying Process
+
+*** Bullion Received
+#+begin_src json
+{
+  "bullionId": "HRE-SG-24050004",
+  "customer": "HRE-AAA-001",
+  "mine": "DID-1658954",
+  "paymentCode": "SG",
+  "items": [
+    {
+      "weight": {
+        "kilograms": 12.0
+      },
+      "descriptors": [
+        "Cu"
+      ],
+      "type": "ingot"
+    }
+  ],
+  "time": "2024-05-14T13:53:54.6792758+03:00",
+  "user": "JonathanPeel",
+  "event": "BullionReceived"
+}
+#+end_src
+
+*** Specific Gravity Signoff
+
+#+begin_src json
+{
+  "bullionId": "HRE-SG-24050004",
+  "fineness": 876.0,
+  "time": "2024-05-14T15:26:15.167155+03:00",
+  "user": "JonathanPeel",
+  "event": "SpecificGravitySignedOff"
+}
+#+end_src
+
+*** Price Approved (SG)
+
++ routing key :: ~commstack.refinery.PriceApprovedEvent~
+
+#+begin_src json
+{
+  "bullionId": "HRE-SG-24050004",
+  "time": "2024-05-14T15:26:15.167155+03:00",
+  "user": "JonathanPeel",
+  "event": "PriceApproved",
+  "goldPayable": { "kilograms": 11.0 },
+  "royaltyCharges": { "usd": 123.0 },
+  "refineryCharges": { "usd": 123.0 },
+  "otherCharges": { "usd": 123.0 },
+  "net": { "usd": 123.0 },
+}
+#+end_src
+
+*** Weight After Melton
+
++ routing key :: ~commstack.refinery.WeightAfterMeltCompleted~
+
+#+begin_src json
+{
+  "event": "WeightAfterMeltCompleted",
+  "user": "JonathanPeel",
+  "time": "2024-05-16T12:27:10.0397771+00:00",
+  "bullionId": "HRE-BBF-24050001",
+  "IngotWeigh": {
+    "kilograms": 1.0
+  },
+  "SampleWeight": {
+    "kilograms": 12.0
+  },
+  "totalWeight": {
+    "kilograms": 13.0
+  }
+}
+#+end_src
+
+*** Fire Assay Batch Sign Offenbach
+
++ routing key :: commstack.refinery.FireAssayBatchSignOff
+
+#+begin_src json
+{
+  "batchId": "240520-2",
+  "bullion": [
+    {
+      "bullionId": "HRE-BBF-24050001",
+      "fineness": 996.4875
+    }
+  ],
+  "time": "2024-05-20T05:43:19.5480169+03:00",
+  "user": "JonathanPeel",
+  "event": "FireAssayBatchSignOff"
+}
+#+end_src
