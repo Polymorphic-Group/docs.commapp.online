@@ -1,6 +1,6 @@
 #+title: CommStack Backend Documentation
 
-* Constellation
+* Events
 
 +  [[./constellation/index.org][Constellation]]
 
