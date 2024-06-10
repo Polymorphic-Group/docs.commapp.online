@@ -1,16 +1,15 @@
 #+title: Constellation
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
 
-* Constellation
-
-** Invoice Forms
+* Invoice Forms
 
 Invoice forms allow table rows to be added inlinde while capturing data.
 
 These instructions assume knowlage on configuring a standard permssions.
 
-*** Basic FLL Setup
+** Basic FLL Setup
 
-**** Musketeer Configuration
+*** Musketeer Configuration
 
 Three tables are required in Muskteer.
 

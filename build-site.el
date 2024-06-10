@@ -18,7 +18,8 @@
 (setq org-html-validation-link nil
       org-html-include-scripts nil
       org-html-include-default-style nil
-      org-html-head "<link rel=\"stylesheet\" href=\"https://cdn.simplecss.org/simple.min.css\" />")
+      org-html-head "<link rel=\"stylesheet\" href=\"https://cdn.simplecss.org/simple.min.css\" />"
+      )
 
 ;; Define the publishing project
 (setq org-publish-project-alist
