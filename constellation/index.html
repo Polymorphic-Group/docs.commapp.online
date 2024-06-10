@@ -6,7 +6,7 @@
 <!-- 2024-06-10 Mon 11:13 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>CommStack Backend Documentation</title>
+<title>Constellation</title>
 <meta name="generator" content="Org mode" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
@@ -242,35 +242,127 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<h1 class="title">CommStack Backend Documentation</h1>
+<h1 class="title">Constellation</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org7efcaad">Events</a></li>
-<li><a href="#org26b3730">Events</a></li>
+<li><a href="#org592c84d">Constellation</a>
+<ul>
+<li><a href="#org5cee3b7">Invoice Forms</a>
+<ul>
+<li><a href="#orge0227f2">Basic FLL Setup</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org7efcaad" class="outline-2">
-<h2 id="org7efcaad">Events</h2>
-<div class="outline-text-2" id="text-org7efcaad">
-<ul class="org-ul">
-<li><a href="./constellation/index.html">Constellation</a></li>
-</ul>
+<div id="outline-container-org592c84d" class="outline-2">
+<h2 id="org592c84d">Constellation</h2>
+<div class="outline-text-2" id="text-org592c84d">
 </div>
+<div id="outline-container-org5cee3b7" class="outline-3">
+<h3 id="org5cee3b7">Invoice Forms</h3>
+<div class="outline-text-3" id="text-org5cee3b7">
+<p>
+Invoice forms allow table rows to be added inlinde while capturing data.
+</p>
+
+<p>
+These instructions assume knowlage on configuring a standard permssions.
+</p>
 </div>
 
-<div id="outline-container-org26b3730" class="outline-2">
-<h2 id="org26b3730">Events</h2>
-<div class="outline-text-2" id="text-org26b3730">
+<div id="outline-container-orge0227f2" class="outline-4">
+<h4 id="orge0227f2">Basic FLL Setup</h4>
+<div class="outline-text-4" id="text-orge0227f2">
+</div>
 <ul class="org-ul">
-<li><a href="./events/refinery.html">Refinery Event</a></li>
+<li><a id="org7ce3de2"></a>Musketeer Configuration<br />
+<div class="outline-text-5" id="text-org7ce3de2">
+<p>
+Three tables are required in Muskteer.
+</p>
+
+
+<div class="figure">
+<p><img src="./invoice-basic-setup-fll.png" alt="invoice-basic-setup-fll.png" />
+</p>
+</div>
+
+<dl class="org-dl">
+<dt>Item source table (1)</dt><dd>It is advised that this is a library table.
+This holds the deffinitions of items that will be selected on the form.
+If the form is for invoices this will hold a list of possible broducs that are being invoiced for.</dd>
+
+<dt>Main table (2)</dt><dd>This is the main table that is used to hold invoices, receiepts, purchase orders, etc.</dd>
+
+<dt>Item table (3)</dt><dd>It is advised that this inherits from the source table, so long that the source table is a library.
+This table holds line items of the main record.
+These are imported from the source table.</dd>
+</dl>
+</div>
+</li>
+
+<li><a id="orgfae0008"></a>Permssion Configuration<br />
+<div class="outline-text-5" id="text-orgfae0008">
+<p>
+Two permissions are required to be created.
+</p>
+</div>
+
+<ul class="org-ul">
+<li><a id="orga9a7c6d"></a>The Item permission<br />
+<div class="outline-text-6" id="text-orga9a7c6d">
+<p>
+Needs to reference the item table (3).
+</p>
+</div>
+</li>
+
+<li><a id="orga87c7e5"></a>The Main permssion<br />
+<div class="outline-text-6" id="text-orga87c7e5">
+<p>
+Needs to reference the main table (2).
+</p>
+
+<p>
+To add the input table into the form, two things need to be done:
+</p>
+
+<ol class="org-ol">
+<li>The item permission needs to be added as level 2.</li>
+
+<li>A special line<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> needs to be added to the <i>Form Add</i> field.
+This needs to be in the format ,without spaces, item permission, colon, and the FLL ID of the Item Source table (1), <code>item-permission:source-fll</code>.</li>
+</ol>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 1: </span><i>Form Add</i> example.</label><pre class="src src-txt">Title
+Description Date Address
+invoice-line-items:1234
+</pre>
+</div>
+</div>
+</li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
 </div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">On an invoice form, field rows will be broken into rows. The item table field should be on it's own row.</p></div></div>
+
+
+</div>
+</div></div>
 <div id="postamble" class="status">
 <p class="date">Created: 2024-06-10 Mon 11:13</p>
 </div>

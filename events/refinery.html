@@ -6,7 +6,7 @@
 <!-- 2024-06-10 Mon 11:13 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>CommStack Backend Documentation</title>
+<title>Refinery</title>
 <meta name="generator" content="Org mode" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
@@ -242,32 +242,157 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<h1 class="title">CommStack Backend Documentation</h1>
+<h1 class="title">Refinery</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org7efcaad">Events</a></li>
-<li><a href="#org26b3730">Events</a></li>
+<li><a href="#org8b20394">Refinery Events</a>
+<ul>
+<li><a href="#orga6001d3">Buying Process</a>
+<ul>
+<li><a href="#orgcef4362">Bullion Received</a></li>
+<li><a href="#org479137c">Specific Gravity Signoff</a></li>
+<li><a href="#org2bdcb73">Price Approved (SG)</a></li>
+<li><a href="#org29aaef3">Weight After Melton</a></li>
+<li><a href="#orga09c17e">Fire Assay Batch Sign Offenbach</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org7efcaad" class="outline-2">
-<h2 id="org7efcaad">Events</h2>
-<div class="outline-text-2" id="text-org7efcaad">
-<ul class="org-ul">
-<li><a href="./constellation/index.html">Constellation</a></li>
-</ul>
+<div id="outline-container-org8b20394" class="outline-2">
+<h2 id="org8b20394">Refinery Events</h2>
+<div class="outline-text-2" id="text-org8b20394">
+</div>
+<div id="outline-container-orga6001d3" class="outline-3">
+<h3 id="orga6001d3">Buying Process</h3>
+<div class="outline-text-3" id="text-orga6001d3">
+</div>
+<div id="outline-container-orgcef4362" class="outline-4">
+<h4 id="orgcef4362">Bullion Received</h4>
+<div class="outline-text-4" id="text-orgcef4362">
+<div class="org-src-container">
+<pre class="src src-json">{
+  "bullionId": "HRE-SG-24050004",
+  "customer": "HRE-AAA-001",
+  "mine": "DID-1658954",
+  "paymentCode": "SG",
+  "items": [
+    {
+      "weight": {
+	"kilograms": 12.0
+      },
+      "descriptors": [
+	"Cu"
+      ],
+      "type": "ingot"
+    }
+  ],
+  "time": "2024-05-14T13:53:54.6792758+03:00",
+  "user": "JonathanPeel",
+  "event": "BullionReceived"
+}
+</pre>
+</div>
 </div>
 </div>
 
-<div id="outline-container-org26b3730" class="outline-2">
-<h2 id="org26b3730">Events</h2>
-<div class="outline-text-2" id="text-org26b3730">
-<ul class="org-ul">
-<li><a href="./events/refinery.html">Refinery Event</a></li>
-</ul>
+<div id="outline-container-org479137c" class="outline-4">
+<h4 id="org479137c">Specific Gravity Signoff</h4>
+<div class="outline-text-4" id="text-org479137c">
+<div class="org-src-container">
+<pre class="src src-json">{
+  "bullionId": "HRE-SG-24050004",
+  "fineness": 876.0,
+  "time": "2024-05-14T15:26:15.167155+03:00",
+  "user": "JonathanPeel",
+  "event": "SpecificGravitySignedOff"
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2bdcb73" class="outline-4">
+<h4 id="org2bdcb73">Price Approved (SG)</h4>
+<div class="outline-text-4" id="text-org2bdcb73">
+<dl class="org-dl">
+<dt>routing key</dt><dd><code>commstack.refinery.PriceApprovedEvent</code></dd>
+</dl>
+
+<div class="org-src-container">
+<pre class="src src-json">{
+  "bullionId": "HRE-SG-24050004",
+  "time": "2024-05-14T15:26:15.167155+03:00",
+  "user": "JonathanPeel",
+  "event": "PriceApproved",
+  "goldPayable": { "kilograms": 11.0 },
+  "royaltyCharges": { "usd": 123.0 },
+  "refineryCharges": { "usd": 123.0 },
+  "otherCharges": { "usd": 123.0 },
+  "net": { "usd": 123.0 },
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org29aaef3" class="outline-4">
+<h4 id="org29aaef3">Weight After Melton</h4>
+<div class="outline-text-4" id="text-org29aaef3">
+<dl class="org-dl">
+<dt>routing key</dt><dd><code>commstack.refinery.WeightAfterMeltCompleted</code></dd>
+</dl>
+
+<div class="org-src-container">
+<pre class="src src-json">{
+  "event": "WeightAfterMeltCompleted",
+  "user": "JonathanPeel",
+  "time": "2024-05-16T12:27:10.0397771+00:00",
+  "bullionId": "HRE-BBF-24050001",
+  "IngotWeigh": {
+    "kilograms": 1.0
+  },
+  "SampleWeight": {
+    "kilograms": 12.0
+  },
+  "totalWeight": {
+    "kilograms": 13.0
+  }
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga09c17e" class="outline-4">
+<h4 id="orga09c17e">Fire Assay Batch Sign Offenbach</h4>
+<div class="outline-text-4" id="text-orga09c17e">
+<dl class="org-dl">
+<dt>routing key</dt><dd>commstack.refinery.FireAssayBatchSignOff</dd>
+</dl>
+
+<div class="org-src-container">
+<pre class="src src-json">{
+  "batchId": "240520-2",
+  "bullion": [
+    {
+      "bullionId": "HRE-BBF-24050001",
+      "fineness": 996.4875
+    }
+  ],
+  "time": "2024-05-20T05:43:19.5480169+03:00",
+  "user": "JonathanPeel",
+  "event": "FireAssayBatchSignOff"
+}
+</pre>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
