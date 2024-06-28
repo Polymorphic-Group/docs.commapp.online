@@ -1,6 +1,63 @@
 #+title: Constellation
 #+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
 
+* Custom User Dashboards
+
+A Custom User dashboard can be created by setting the ~Dashboard~ field on the User instance in Musketeer.
+
+An example ~Dashboard~ is bellow.
+
+#+CAPTION: /Dashboard/ example.
+#+begin_src json
+[
+    {
+      "chart": {
+        "fllChartId": 2922,
+        "title": "Customer status",
+        "dateField": "Date"
+      },
+      "colSpan": 4,
+      "rowSpan": 1
+    },
+    {
+      "chart": {
+        "fllChartId": 2940,
+        "title": "Payment",
+        "dateField": "Date"
+      },
+      "rowSpan": 1,
+      "colSpan": 1
+    },
+    {
+      "chart": {
+        "fllChartId": 2800,
+        "title": "Weight by PC",
+        "dateField": "DateOfReceipt"
+      },
+      "rowSpan": 1,
+      "colSpan": 1
+    },
+    {
+      "chart": {
+        "fllChartId": 2801,
+        "title": "Payment Code Count",
+        "dateField": "DateOfReceipt"
+      },
+      "rowSpan": 1,
+      "colSpan": 1
+    },
+    {
+      "chart": {
+        "fllChartId": 2887,
+        "title": "Quote Value"
+      },
+      "rowSpan": 1,
+      "colSpan": 1
+    }
+]
+#+end_src
+
+
 * Invoice Forms
 
 Invoice forms allow table rows to be added inlinde while capturing data.
