@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-06-28 Fri 15:42 -->
+<!-- 2024-07-05 Fri 09:29 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Constellation</title>
@@ -68,12 +68,17 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgdd563d3">Custom User Dashboards</a></li>
-<li><a href="#org4c01807">Invoice Forms</a>
+<li><a href="#org386f4ab">Form Field Configuration</a>
 <ul>
-<li><a href="#org4af6688">Basic FLL Setup</a>
+<li><a href="#orgdade053">Required fields</a></li>
+</ul>
+</li>
+<li><a href="#orgb91a79e">Custom User Dashboards</a></li>
+<li><a href="#org8239951">Invoice Forms</a>
 <ul>
-<li><a href="#org9550404">Musketeer Configuration</a></li>
+<li><a href="#orgfa50bc9">Basic FLL Setup</a>
+<ul>
+<li><a href="#org7d8ceeb">Musketeer Configuration</a></li>
 </ul>
 </li>
 </ul>
@@ -82,9 +87,31 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orgdd563d3" class="outline-2">
-<h2 id="orgdd563d3">Custom User Dashboards</h2>
-<div class="outline-text-2" id="text-orgdd563d3">
+<div id="outline-container-org386f4ab" class="outline-2">
+<h2 id="org386f4ab">Form Field Configuration</h2>
+<div class="outline-text-2" id="text-org386f4ab">
+</div>
+<div id="outline-container-orgdade053" class="outline-3">
+<h3 id="orgdade053">Required fields</h3>
+<div class="outline-text-3" id="text-orgdade053">
+<p>
+On the FormAdd, include a <code>*</code> in front of each required field.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-text">*Title Description
+</pre>
+</div>
+<p>
+In the example above, Title will be required.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb91a79e" class="outline-2">
+<h2 id="orgb91a79e">Custom User Dashboards</h2>
+<div class="outline-text-2" id="text-orgb91a79e">
 <p>
 A Custom User dashboard can be created by setting the <code>Dashboard</code> field on the User instance in Musketeer.
 </p>
@@ -146,9 +173,9 @@ An example <code>Dashboard</code> is bellow.
 </div>
 
 
-<div id="outline-container-org4c01807" class="outline-2">
-<h2 id="org4c01807">Invoice Forms</h2>
-<div class="outline-text-2" id="text-org4c01807">
+<div id="outline-container-org8239951" class="outline-2">
+<h2 id="org8239951">Invoice Forms</h2>
+<div class="outline-text-2" id="text-org8239951">
 <p>
 Invoice forms allow table rows to be added inlinde while capturing data.
 </p>
@@ -158,13 +185,13 @@ These instructions assume knowlage on configuring a standard permssions.
 </p>
 </div>
 
-<div id="outline-container-org4af6688" class="outline-3">
-<h3 id="org4af6688">Basic FLL Setup</h3>
-<div class="outline-text-3" id="text-org4af6688">
+<div id="outline-container-orgfa50bc9" class="outline-3">
+<h3 id="orgfa50bc9">Basic FLL Setup</h3>
+<div class="outline-text-3" id="text-orgfa50bc9">
 </div>
-<div id="outline-container-org9550404" class="outline-4">
-<h4 id="org9550404">Musketeer Configuration</h4>
-<div class="outline-text-4" id="text-org9550404">
+<div id="outline-container-org7d8ceeb" class="outline-4">
+<h4 id="org7d8ceeb">Musketeer Configuration</h4>
+<div class="outline-text-4" id="text-org7d8ceeb">
 <p>
 Three tables are required in Muskteer.
 </p>
@@ -189,24 +216,24 @@ These are imported from the source table.</dd>
 </div>
 
 <ul class="org-ul">
-<li><a id="org142151e"></a>Permssion Configuration<br />
-<div class="outline-text-5" id="text-org142151e">
+<li><a id="orga6490bf"></a>Permssion Configuration<br />
+<div class="outline-text-5" id="text-orga6490bf">
 <p>
 Two permissions are required to be created.
 </p>
 </div>
 
 <ul class="org-ul">
-<li><a id="orga47d5f4"></a>The Item permission<br />
-<div class="outline-text-6" id="text-orga47d5f4">
+<li><a id="org8d7c4ef"></a>The Item permission<br />
+<div class="outline-text-6" id="text-org8d7c4ef">
 <p>
 Needs to reference the item table (3).
 </p>
 </div>
 </li>
 
-<li><a id="org502f279"></a>The Main permssion<br />
-<div class="outline-text-6" id="text-org502f279">
+<li><a id="org8be9bf3"></a>The Main permssion<br />
+<div class="outline-text-6" id="text-org8be9bf3">
 <p>
 Needs to reference the main table (2).
 </p>
@@ -246,7 +273,7 @@ invoice-line-items:1234
 </div>
 </div></div>
 <div id="postamble" class="status">
-<p class="date">Created: 2024-06-28 Fri 15:42</p>
+<p class="date">Created: 2024-07-05 Fri 09:29</p>
 </div>
 </body>
 </html>
