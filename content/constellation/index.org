@@ -1,6 +1,17 @@
 #+title: Constellation
 #+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
 
+* Form Field Configuration
+
+** Required fields
+
+On the FormAdd, include a ~*~ in front of each required field.
+ 
+#+begin_src text
+*Title Description
+#+end_src
+In the example above, Title will be required.
+
 * Custom User Dashboards
 
 A Custom User dashboard can be created by setting the ~Dashboard~ field on the User instance in Musketeer.
