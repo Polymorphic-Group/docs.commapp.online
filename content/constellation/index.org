@@ -1,5 +1,5 @@
 #+title: Constellation
-#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
+# +SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
 
 * Form Field Configuration
 
@@ -27,7 +27,7 @@ EmailAddress ComplianceStatus CustomerStatus  LicenceType
 AccountNumber BranchCode ComplianceStatus CustomerType
 #+end_src
 
-In listing [[src-optionsl-section]] The second section will only be shown if /Branch/ is set to "HRE".
+In listing [[src-optional-section]] The second section will only be shown if /Branch/ is set to "HRE".
 The fifth section will only be shown if  /Branch/ is "HRE" and if /ComplianceStatus/ is Current.
 
 
