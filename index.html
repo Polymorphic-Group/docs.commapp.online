@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-07-16 Tue 07:16 -->
+<!-- 2024-07-16 Tue 08:09 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>CommStack Backend Documentation Constellation Refinery</title>
@@ -74,27 +74,31 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgfad3cf2">Constellation</a>
+<li><a href="#orgf2d1e74">Constellation</a>
 <ul>
-<li><a href="#orge49447e">Form Field Configuration</a>
+<li><a href="#orgc27417c">Form Field Configuration</a>
 <ul>
-<li><a href="#org7743b91">Required fields</a></li>
-<li><a href="#orgd7c61ae">Optional form sections</a></li>
+<li><a href="#orge7adec1">Required fields</a></li>
+<li><a href="#org7b0c348">Optional form sections</a></li>
 </ul>
 </li>
-<li><a href="#org955e464">Custom User Dashboards</a></li>
-<li><a href="#org93727e0">Invoice Forms</a>
+<li><a href="#orgb6b8afc">Custom User Dashboards</a>
 <ul>
-<li><a href="#orgae43c7f">Basic FLL Setup</a></li>
+<li><a href="#dashboard-permission-link">Dashboard to Permission link</a></li>
+</ul>
+</li>
+<li><a href="#org2adf721">Invoice Forms</a>
+<ul>
+<li><a href="#org2383537">Basic FLL Setup</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org3a6e61f">Refinery</a>
+<li><a href="#org9919deb">Refinery</a>
 <ul>
-<li><a href="#org74de700">Refinery Events</a>
+<li><a href="#org73ca25d">Refinery Events</a>
 <ul>
-<li><a href="#orgd1e2445">Buying Process</a></li>
+<li><a href="#orgf2068a5">Buying Process</a></li>
 </ul>
 </li>
 </ul>
@@ -103,18 +107,18 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orgfad3cf2" class="outline-2">
-<h2 id="orgfad3cf2">Constellation</h2>
-<div class="outline-text-2" id="text-orgfad3cf2">
+<div id="outline-container-orgf2d1e74" class="outline-2">
+<h2 id="orgf2d1e74">Constellation</h2>
+<div class="outline-text-2" id="text-orgf2d1e74">
 </div>
 
-<div id="outline-container-orge49447e" class="outline-3">
-<h3 id="orge49447e">Form Field Configuration</h3>
-<div class="outline-text-3" id="text-orge49447e">
+<div id="outline-container-orgc27417c" class="outline-3">
+<h3 id="orgc27417c">Form Field Configuration</h3>
+<div class="outline-text-3" id="text-orgc27417c">
 </div>
-<div id="outline-container-org7743b91" class="outline-4">
-<h4 id="org7743b91">Required fields</h4>
-<div class="outline-text-4" id="text-org7743b91">
+<div id="outline-container-orge7adec1" class="outline-4">
+<h4 id="orge7adec1">Required fields</h4>
+<div class="outline-text-4" id="text-orge7adec1">
 <p>
 On the FormAdd, include a <code>*</code> in front of each required field.
 </p>
@@ -129,16 +133,16 @@ In the example above, Title will be required.
 </div>
 </div>
 
-<div id="outline-container-orgd7c61ae" class="outline-4">
-<h4 id="orgd7c61ae">Optional form sections</h4>
-<div class="outline-text-4" id="text-orgd7c61ae">
+<div id="outline-container-org7b0c348" class="outline-4">
+<h4 id="org7b0c348">Optional form sections</h4>
+<div class="outline-text-4" id="text-org7b0c348">
 <p>
 On a multi section form, sections can be hidden if the field deffinition starts with a filter value.<br />
 A filter value will be in the format <code>{"FieldName":"Condition"}</code> and be the first item on the row.
 </p>
 
 <div class="org-src-container">
-<label class="org-src-name"><span class="listing-number">Listing 1: </span>Optional section example</label><pre class="src src-text" id="org0d732be">*Name Address *Province *Branch *PaymentCode AuthorizedSignatoryName
+<label class="org-src-name"><span class="listing-number">Listing 1: </span>Optional section example</label><pre class="src src-text" id="orgd69b5ed">*Name Address *Province *Branch *PaymentCode AuthorizedSignatoryName
 {"Branch":"HRE"} NationalIdNo PhoneNumber ComplianceStatus
 EmailAddress ComplianceStatus CustomerStatus  LicenceType
 {"Branch":"HRE","ComplianceStatus":"Current"} LicenceNo LicenceExpDate VatNo NameOfBank
@@ -147,7 +151,7 @@ AccountNumber BranchCode ComplianceStatus CustomerType
 </div>
 
 <p>
-In listing <a href="#org0d732be">1</a> The second section will only be shown if <i>Branch</i> is set to "HRE".
+In listing <a href="#orgd69b5ed">1</a> The second section will only be shown if <i>Branch</i> is set to "HRE".
 The fifth section will only be shown if  <i>Branch</i> is "HRE" and if <i>ComplianceStatus</i> is Current.
 </p>
 </div>
@@ -155,9 +159,9 @@ The fifth section will only be shown if  <i>Branch</i> is "HRE" and if <i>Compli
 </div>
 
 
-<div id="outline-container-org955e464" class="outline-3">
-<h3 id="org955e464">Custom User Dashboards</h3>
-<div class="outline-text-3" id="text-org955e464">
+<div id="outline-container-orgb6b8afc" class="outline-3">
+<h3 id="orgb6b8afc">Custom User Dashboards</h3>
+<div class="outline-text-3" id="text-orgb6b8afc">
 <p>
 A Custom User dashboard can be created by setting the <code>Dashboard</code> field on the User instance in Musketeer.
 </p>
@@ -216,12 +220,42 @@ An example <code>Dashboard</code> is bellow.
 </pre>
 </div>
 </div>
+
+<div id="outline-container-orgd133d9d" class="outline-4">
+<h4 id="dashboard-permission-link">Dashboard to Permission link</h4>
+<div class="outline-text-4" id="text-dashboard-permission-link">
+<p>
+A dashboard can be given a link to a permission.
+</p>
+
+<p>
+This is done by adding a "permission" property to user's <i>Dashboard</i>, as in the example below.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-json">[
+    {
+      "chart": {
+	"fllChartId": 2922,
+	"title": "Customer status",
+	"dateField": "Date"
+      },
+      "permission": "test-permission",
+      "colSpan": 4,
+      "rowSpan": 1
+    }
+]
+</pre>
+</div>
+</div>
+</div>
 </div>
 
 
-<div id="outline-container-org93727e0" class="outline-3">
-<h3 id="org93727e0">Invoice Forms</h3>
-<div class="outline-text-3" id="text-org93727e0">
+
+<div id="outline-container-org2adf721" class="outline-3">
+<h3 id="org2adf721">Invoice Forms</h3>
+<div class="outline-text-3" id="text-org2adf721">
 <p>
 Invoice forms allow table rows to be added inlinde while capturing data.
 </p>
@@ -231,13 +265,13 @@ These instructions assume knowlage on configuring a standard permssions.
 </p>
 </div>
 
-<div id="outline-container-orgae43c7f" class="outline-4">
-<h4 id="orgae43c7f">Basic FLL Setup</h4>
-<div class="outline-text-4" id="text-orgae43c7f">
+<div id="outline-container-org2383537" class="outline-4">
+<h4 id="org2383537">Basic FLL Setup</h4>
+<div class="outline-text-4" id="text-org2383537">
 </div>
 <ul class="org-ul">
-<li><a id="org7bf160a"></a>Musketeer Configuration<br />
-<div class="outline-text-5" id="text-org7bf160a">
+<li><a id="org5d66382"></a>Musketeer Configuration<br />
+<div class="outline-text-5" id="text-org5d66382">
 <p>
 Three tables are required in Muskteer.
 </p>
@@ -262,24 +296,24 @@ These are imported from the source table.</dd>
 </div>
 
 <ul class="org-ul">
-<li><a id="orga9a5728"></a>Permssion Configuration<br />
-<div class="outline-text-6" id="text-orga9a5728">
+<li><a id="orgae49e4d"></a>Permssion Configuration<br />
+<div class="outline-text-6" id="text-orgae49e4d">
 <p>
 Two permissions are required to be created.
 </p>
 </div>
 
 <ul class="org-ul">
-<li><a id="org9143032"></a>The Item permission<br />
-<div class="outline-text-7" id="text-org9143032">
+<li><a id="org988d06e"></a>The Item permission<br />
+<div class="outline-text-7" id="text-org988d06e">
 <p>
 Needs to reference the item table (3).
 </p>
 </div>
 </li>
 
-<li><a id="org964fbad"></a>The Main permssion<br />
-<div class="outline-text-7" id="text-org964fbad">
+<li><a id="orgea7f9e7"></a>The Main permssion<br />
+<div class="outline-text-7" id="text-orgea7f9e7">
 <p>
 Needs to reference the main table (2).
 </p>
@@ -312,22 +346,22 @@ invoice-line-items:1234
 </div>
 </div>
 
-<div id="outline-container-org3a6e61f" class="outline-2">
-<h2 id="org3a6e61f">Refinery</h2>
-<div class="outline-text-2" id="text-org3a6e61f">
+<div id="outline-container-org9919deb" class="outline-2">
+<h2 id="org9919deb">Refinery</h2>
+<div class="outline-text-2" id="text-org9919deb">
 </div>
 
-<div id="outline-container-org74de700" class="outline-3">
-<h3 id="org74de700">Refinery Events</h3>
-<div class="outline-text-3" id="text-org74de700">
+<div id="outline-container-org73ca25d" class="outline-3">
+<h3 id="org73ca25d">Refinery Events</h3>
+<div class="outline-text-3" id="text-org73ca25d">
 </div>
-<div id="outline-container-orgd1e2445" class="outline-4">
-<h4 id="orgd1e2445">Buying Process</h4>
-<div class="outline-text-4" id="text-orgd1e2445">
+<div id="outline-container-orgf2068a5" class="outline-4">
+<h4 id="orgf2068a5">Buying Process</h4>
+<div class="outline-text-4" id="text-orgf2068a5">
 </div>
 <ul class="org-ul">
-<li><a id="org79771a7"></a>Bullion Received<br />
-<div class="outline-text-5" id="text-org79771a7">
+<li><a id="org433bf53"></a>Bullion Received<br />
+<div class="outline-text-5" id="text-org433bf53">
 <div class="org-src-container">
 <pre class="src src-json">{
   "bullionId": "HRE-SG-24050004",
@@ -354,8 +388,8 @@ invoice-line-items:1234
 </div>
 </li>
 
-<li><a id="org0b5edb1"></a>Specific Gravity Signoff<br />
-<div class="outline-text-5" id="text-org0b5edb1">
+<li><a id="orgda15e51"></a>Specific Gravity Signoff<br />
+<div class="outline-text-5" id="text-orgda15e51">
 <div class="org-src-container">
 <pre class="src src-json">{
   "bullionId": "HRE-SG-24050004",
@@ -369,8 +403,8 @@ invoice-line-items:1234
 </div>
 </li>
 
-<li><a id="orga2a5690"></a>Price Approved (SG)<br />
-<div class="outline-text-5" id="text-orga2a5690">
+<li><a id="orgecf1e1f"></a>Price Approved (SG)<br />
+<div class="outline-text-5" id="text-orgecf1e1f">
 <dl class="org-dl">
 <dt>routing key</dt><dd><code>commstack.refinery.PriceApprovedEvent</code></dd>
 </dl>
@@ -392,8 +426,8 @@ invoice-line-items:1234
 </div>
 </li>
 
-<li><a id="org64ae66f"></a>Weight After Melton<br />
-<div class="outline-text-5" id="text-org64ae66f">
+<li><a id="org41e0fb1"></a>Weight After Melton<br />
+<div class="outline-text-5" id="text-org41e0fb1">
 <dl class="org-dl">
 <dt>routing key</dt><dd><code>commstack.refinery.WeightAfterMeltCompleted</code></dd>
 </dl>
@@ -419,8 +453,8 @@ invoice-line-items:1234
 </div>
 </li>
 
-<li><a id="orgd76e229"></a>Fire Assay Batch Sign Offenbach<br />
-<div class="outline-text-5" id="text-orgd76e229">
+<li><a id="org317d10d"></a>Fire Assay Batch Sign Offenbach<br />
+<div class="outline-text-5" id="text-org317d10d">
 <dl class="org-dl">
 <dt>routing key</dt><dd>commstack.refinery.FireAssayBatchSignOff</dd>
 </dl>
@@ -456,7 +490,7 @@ invoice-line-items:1234
 </div>
 </div></div>
 <div id="postamble" class="status">
-<p class="date">Created: 2024-07-16 Tue 07:16</p>
+<p class="date">Created: 2024-07-16 Tue 08:09</p>
 </div>
 </body>
 </html>
