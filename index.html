@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2024-07-16 Tue 07:14 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>CommStack Backend Documentation Constellation Refinery</title>
+<meta name="generator" content="Org mode" />
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">CommStack Backend Documentation Constellation Refinery</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org445b80c">Form Field Configuration</a>
+<ul>
+<li><a href="#org14ac0ba">Required fields</a></li>
+<li><a href="#org23f7ad1">Optional form sections</a></li>
+</ul>
+</li>
+<li><a href="#org9660658">Custom User Dashboards</a></li>
+<li><a href="#orgd8798bd">Invoice Forms</a>
+<ul>
+<li><a href="#org888b281">Basic FLL Setup</a>
+<ul>
+<li><a href="#org2313b83">Musketeer Configuration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org7aa4398">Refinery Events</a>
+<ul>
+<li><a href="#org8e57182">Buying Process</a>
+<ul>
+<li><a href="#org696fb44">Bullion Received</a></li>
+<li><a href="#orgf519cad">Specific Gravity Signoff</a></li>
+<li><a href="#orgcde49b5">Price Approved (SG)</a></li>
+<li><a href="#orgf5cfb77">Weight After Melton</a></li>
+<li><a href="#org2a500a1">Fire Assay Batch Sign Offenbach</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org445b80c" class="outline-2">
+<h2 id="org445b80c">Form Field Configuration</h2>
+<div class="outline-text-2" id="text-org445b80c">
+</div>
+<div id="outline-container-org14ac0ba" class="outline-3">
+<h3 id="org14ac0ba">Required fields</h3>
+<div class="outline-text-3" id="text-org14ac0ba">
+<p>
+On the FormAdd, include a <code>*</code> in front of each required field.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-text">*Title Description
+</pre>
+</div>
+<p>
+In the example above, Title will be required.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org23f7ad1" class="outline-3">
+<h3 id="org23f7ad1">Optional form sections</h3>
+<div class="outline-text-3" id="text-org23f7ad1">
+<p>
+On a multi section form, sections can be hidden if the field deffinition starts with a filter value.<br />
+A filter value will be in the format <code>{"FieldName":"Condition"}</code> and be the first item on the row.
+</p>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 1: </span>Optional section example</label><pre class="src src-text" id="org4ce1f10">*Name Address *Province *Branch *PaymentCode AuthorizedSignatoryName
+{"Branch":"HRE"} NationalIdNo PhoneNumber ComplianceStatus
+EmailAddress ComplianceStatus CustomerStatus  LicenceType
+{"Branch":"HRE","ComplianceStatus":"Current"} LicenceNo LicenceExpDate VatNo NameOfBank
+AccountNumber BranchCode ComplianceStatus CustomerType
+</pre>
+</div>
+
+<p>
+In listing <a href="#org4ce1f10">1</a> The second section will only be shown if <i>Branch</i> is set to "HRE".
+The fifth section will only be shown if  <i>Branch</i> is "HRE" and if <i>ComplianceStatus</i> is Current.
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org9660658" class="outline-2">
+<h2 id="org9660658">Custom User Dashboards</h2>
+<div class="outline-text-2" id="text-org9660658">
+<p>
+A Custom User dashboard can be created by setting the <code>Dashboard</code> field on the User instance in Musketeer.
+</p>
+
+<p>
+An example <code>Dashboard</code> is bellow.
+</p>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 2: </span><i>Dashboard</i> example.</label><pre class="src src-json">[
+    {
+      "chart": {
+	"fllChartId": 2922,
+	"title": "Customer status",
+	"dateField": "Date"
+      },
+      "colSpan": 4,
+      "rowSpan": 1
+    },
+    {
+      "chart": {
+	"fllChartId": 2940,
+	"title": "Payment",
+	"dateField": "Date"
+      },
+      "rowSpan": 1,
+      "colSpan": 1
+    },
+    {
+      "chart": {
+	"fllChartId": 2800,
+	"title": "Weight by PC",
+	"dateField": "DateOfReceipt"
+      },
+      "rowSpan": 1,
+      "colSpan": 1
+    },
+    {
+      "chart": {
+	"fllChartId": 2801,
+	"title": "Payment Code Count",
+	"dateField": "DateOfReceipt"
+      },
+      "rowSpan": 1,
+      "colSpan": 1
+    },
+    {
+      "chart": {
+	"fllChartId": 2887,
+	"title": "Quote Value"
+      },
+      "rowSpan": 1,
+      "colSpan": 1
+    }
+]
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgd8798bd" class="outline-2">
+<h2 id="orgd8798bd">Invoice Forms</h2>
+<div class="outline-text-2" id="text-orgd8798bd">
+<p>
+Invoice forms allow table rows to be added inlinde while capturing data.
+</p>
+
+<p>
+These instructions assume knowlage on configuring a standard permssions.
+</p>
+</div>
+
+<div id="outline-container-org888b281" class="outline-3">
+<h3 id="org888b281">Basic FLL Setup</h3>
+<div class="outline-text-3" id="text-org888b281">
+</div>
+<div id="outline-container-org2313b83" class="outline-4">
+<h4 id="org2313b83">Musketeer Configuration</h4>
+<div class="outline-text-4" id="text-org2313b83">
+<p>
+Three tables are required in Muskteer.
+</p>
+
+
+<div class="figure">
+<p><img src="constellation/invoice-basic-setup-fll.png" alt="invoice-basic-setup-fll.png" />
+</p>
+</div>
+
+<dl class="org-dl">
+<dt>Item source table (1)</dt><dd>It is advised that this is a library table.
+This holds the deffinitions of items that will be selected on the form.
+If the form is for invoices this will hold a list of possible broducs that are being invoiced for.</dd>
+
+<dt>Main table (2)</dt><dd>This is the main table that is used to hold invoices, receiepts, purchase orders, etc.</dd>
+
+<dt>Item table (3)</dt><dd>It is advised that this inherits from the source table, so long that the source table is a library.
+This table holds line items of the main record.
+These are imported from the source table.</dd>
+</dl>
+</div>
+
+<ul class="org-ul">
+<li><a id="org0897c86"></a>Permssion Configuration<br />
+<div class="outline-text-5" id="text-org0897c86">
+<p>
+Two permissions are required to be created.
+</p>
+</div>
+
+<ul class="org-ul">
+<li><a id="orga12ca71"></a>The Item permission<br />
+<div class="outline-text-6" id="text-orga12ca71">
+<p>
+Needs to reference the item table (3).
+</p>
+</div>
+</li>
+
+<li><a id="orge93a91f"></a>The Main permssion<br />
+<div class="outline-text-6" id="text-orge93a91f">
+<p>
+Needs to reference the main table (2).
+</p>
+
+<p>
+To add the input table into the form, two things need to be done:
+</p>
+
+<ol class="org-ol">
+<li>The item permission needs to be added as level 2.</li>
+
+<li>A special line<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> needs to be added to the <i>Form Add</i> field.
+This needs to be in the format ,without spaces, item permission, colon, and the FLL ID of the Item Source table (1), <code>item-permission:source-fll</code>.</li>
+</ol>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 3: </span><i>Form Add</i> example.</label><pre class="src src-txt">Title
+Description Date Address
+invoice-line-items:1234
+</pre>
+</div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7aa4398" class="outline-2">
+<h2 id="org7aa4398">Refinery Events</h2>
+<div class="outline-text-2" id="text-org7aa4398">
+</div>
+<div id="outline-container-org8e57182" class="outline-3">
+<h3 id="org8e57182">Buying Process</h3>
+<div class="outline-text-3" id="text-org8e57182">
+</div>
+<div id="outline-container-org696fb44" class="outline-4">
+<h4 id="org696fb44">Bullion Received</h4>
+<div class="outline-text-4" id="text-org696fb44">
+<div class="org-src-container">
+<pre class="src src-json">{
+  "bullionId": "HRE-SG-24050004",
+  "customer": "HRE-AAA-001",
+  "mine": "DID-1658954",
+  "paymentCode": "SG",
+  "items": [
+    {
+      "weight": {
+	"kilograms": 12.0
+      },
+      "descriptors": [
+	"Cu"
+      ],
+      "type": "ingot"
+    }
+  ],
+  "time": "2024-05-14T13:53:54.6792758+03:00",
+  "user": "JonathanPeel",
+  "event": "BullionReceived"
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf519cad" class="outline-4">
+<h4 id="orgf519cad">Specific Gravity Signoff</h4>
+<div class="outline-text-4" id="text-orgf519cad">
+<div class="org-src-container">
+<pre class="src src-json">{
+  "bullionId": "HRE-SG-24050004",
+  "fineness": 876.0,
+  "time": "2024-05-14T15:26:15.167155+03:00",
+  "user": "JonathanPeel",
+  "event": "SpecificGravitySignedOff"
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgcde49b5" class="outline-4">
+<h4 id="orgcde49b5">Price Approved (SG)</h4>
+<div class="outline-text-4" id="text-orgcde49b5">
+<dl class="org-dl">
+<dt>routing key</dt><dd><code>commstack.refinery.PriceApprovedEvent</code></dd>
+</dl>
+
+<div class="org-src-container">
+<pre class="src src-json">{
+  "bullionId": "HRE-SG-24050004",
+  "time": "2024-05-14T15:26:15.167155+03:00",
+  "user": "JonathanPeel",
+  "event": "PriceApproved",
+  "goldPayable": { "kilograms": 11.0 },
+  "royaltyCharges": { "usd": 123.0 },
+  "refineryCharges": { "usd": 123.0 },
+  "otherCharges": { "usd": 123.0 },
+  "net": { "usd": 123.0 },
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf5cfb77" class="outline-4">
+<h4 id="orgf5cfb77">Weight After Melton</h4>
+<div class="outline-text-4" id="text-orgf5cfb77">
+<dl class="org-dl">
+<dt>routing key</dt><dd><code>commstack.refinery.WeightAfterMeltCompleted</code></dd>
+</dl>
+
+<div class="org-src-container">
+<pre class="src src-json">{
+  "event": "WeightAfterMeltCompleted",
+  "user": "JonathanPeel",
+  "time": "2024-05-16T12:27:10.0397771+00:00",
+  "bullionId": "HRE-BBF-24050001",
+  "IngotWeigh": {
+    "kilograms": 1.0
+  },
+  "SampleWeight": {
+    "kilograms": 12.0
+  },
+  "totalWeight": {
+    "kilograms": 13.0
+  }
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2a500a1" class="outline-4">
+<h4 id="org2a500a1">Fire Assay Batch Sign Offenbach</h4>
+<div class="outline-text-4" id="text-org2a500a1">
+<dl class="org-dl">
+<dt>routing key</dt><dd>commstack.refinery.FireAssayBatchSignOff</dd>
+</dl>
+
+<div class="org-src-container">
+<pre class="src src-json">{
+  "batchId": "240520-2",
+  "bullion": [
+    {
+      "bullionId": "HRE-BBF-24050001",
+      "fineness": 996.4875
+    }
+  ],
+  "time": "2024-05-20T05:43:19.5480169+03:00",
+  "user": "JonathanPeel",
+  "event": "FireAssayBatchSignOff"
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">On an invoice form, field rows will be broken into rows. The item table field should be on it's own row.</p></div></div>
+
+
+</div>
+</div></div>
+<div id="postamble" class="status">
+<p class="date">Created: 2024-07-16 Tue 07:14</p>
+</div>
+</body>
+</html>
