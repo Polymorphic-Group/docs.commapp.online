@@ -1,8 +1,10 @@
 #+title: CommStack Backend Documentation
 #+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
 
-#+INCLUDE "./constellation/index.org"
-#+INCLUDE "./events/refinery.org"
+* CommStack
+
+#+INCLUDE: "./constellation/index.org"
+#+INCLUDE: "./events/refinery.org"
 
 
 # * COMMENT Constellation
