@@ -12,6 +12,25 @@ On the FormAdd, include a ~*~ in front of each required field.
 #+end_src
 In the example above, Title will be required.
 
+** Optional form sections
+
+On a multi section form, sections can be hidden if the field deffinition starts with a filter value.\\
+A filter value will be in the format ~{"FieldName":"Condition"}~ and be the first item on the row.
+
+#+NAME: src-optional-section
+#+CAPTION: Optional section example
+#+begin_src text
+*Name Address *Province *Branch *PaymentCode AuthorizedSignatoryName
+{"Branch":"HRE"} NationalIdNo PhoneNumber ComplianceStatus
+EmailAddress ComplianceStatus CustomerStatus  LicenceType
+{"Branch":"HRE","ComplianceStatus":"Current"} LicenceNo LicenceExpDate VatNo NameOfBank
+AccountNumber BranchCode ComplianceStatus CustomerType
+#+end_src
+
+In listing [[src-optionsl-section]] The second section will only be shown if /Branch/ is set to "HRE".
+The fifth section will only be shown if  /Branch/ is "HRE" and if /ComplianceStatus/ is Current.
+
+
 * Custom User Dashboards
 
 A Custom User dashboard can be created by setting the ~Dashboard~ field on the User instance in Musketeer.
