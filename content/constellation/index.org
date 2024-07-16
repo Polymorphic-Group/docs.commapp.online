@@ -87,6 +87,31 @@ An example ~Dashboard~ is bellow.
 ]
 #+end_src
 
+** Dashboard to Permission link
+:PROPERTIES:
+:CUSTOM_ID: dashboard-permission-link
+:END:
+
+A dashboard can be given a link to a permission.
+
+This is done by adding a "permission" property to user's /Dashboard/, as in the example below.
+
+#+begin_src json
+[
+    {
+      "chart": {
+        "fllChartId": 2922,
+        "title": "Customer status",
+        "dateField": "Date"
+      },
+      "permission": "test-permission",
+      "colSpan": 4,
+      "rowSpan": 1
+    }
+]
+#+end_src
+
+
 
 * Invoice Forms
 
