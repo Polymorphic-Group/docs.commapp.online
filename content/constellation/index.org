@@ -3,6 +3,30 @@
 
 * Form Field Configuration
 
+** Group names
+:PROPERTIES:
+:CUSTOM_ID: form-field-group-names
+:END:
+
+Group names can be added to /View/ fields. \\ 
+Optionally, they can also be added to /Edit/ and /Add/ fields.
+
+#+CAPTION: e.g. Form View
+#+begin_src text
+"Section 1" Name Address Province Branch NameOfBank ComplianceStatus NationalIdNo PhoneNumber 
+"Section 2" LicenceNo LicenceExpDate VatNo LicenceType AccountNumber BranchCode
+"Section 3" SwiftCode ComplianceStatus CustomerType PaymentCode EmailAddress
+#+end_src
+
+#+CAPTION: e.g. Form Add
+#+begin_src text
+"A1" *Name Address *Province *Branch *PaymentCode AuthorizedSignatoryName 
+"A2" {"Branch":"HRE"} NationalIdNo PhoneNumber ComplianceStatus 
+"B1" EmailAddress ComplianceStatus CustomerStatus  LicenceType 
+"B2" {"Branch":"HRE","ComplianceStatus":"Current"} LicenceNo LicenceExpDate VatNo NameOfBank 
+"C" AccountNumber BranchCode ComplianceStatus CustomerType
+#+end_src
+
 ** Required fields
 
 On the FormAdd, include a ~*~ in front of each required field.
