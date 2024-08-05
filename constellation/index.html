@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-07-16 Tue 08:09 -->
+<!-- 2024-08-05 Mon 11:37 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Constellation</title>
@@ -247,22 +247,23 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org57de234">Form Field Configuration</a>
+<li><a href="#org9eb83dd">Form Field Configuration</a>
 <ul>
-<li><a href="#orgc0c5186">Required fields</a></li>
-<li><a href="#org117bcf5">Optional form sections</a></li>
+<li><a href="#form-field-group-names">Group names</a></li>
+<li><a href="#org6bcf0ae">Required fields</a></li>
+<li><a href="#orga76ae90">Optional form sections</a></li>
 </ul>
 </li>
-<li><a href="#org37f9847">Custom User Dashboards</a>
+<li><a href="#orgb50b9ff">Custom User Dashboards</a>
 <ul>
 <li><a href="#dashboard-permission-link">Dashboard to Permission link</a></li>
 </ul>
 </li>
-<li><a href="#orgf69e88a">Invoice Forms</a>
+<li><a href="#org04d0469">Invoice Forms</a>
 <ul>
-<li><a href="#org1bf1498">Basic FLL Setup</a>
+<li><a href="#org130457f">Basic FLL Setup</a>
 <ul>
-<li><a href="#org1174be0">Musketeer Configuration</a></li>
+<li><a href="#orgd84622a">Musketeer Configuration</a></li>
 </ul>
 </li>
 </ul>
@@ -271,13 +272,39 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org57de234" class="outline-2">
-<h2 id="org57de234">Form Field Configuration</h2>
-<div class="outline-text-2" id="text-org57de234">
+<div id="outline-container-org9eb83dd" class="outline-2">
+<h2 id="org9eb83dd">Form Field Configuration</h2>
+<div class="outline-text-2" id="text-org9eb83dd">
 </div>
-<div id="outline-container-orgc0c5186" class="outline-3">
-<h3 id="orgc0c5186">Required fields</h3>
-<div class="outline-text-3" id="text-orgc0c5186">
+<div id="outline-container-org55d5315" class="outline-3">
+<h3 id="form-field-group-names">Group names</h3>
+<div class="outline-text-3" id="text-form-field-group-names">
+<p>
+Group names can be added to <i>View</i> fields. <br />
+Optionally, they can also be added to <i>Edit</i> and <i>Add</i> fields.
+</p>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 1: </span>e.g. Form View</label><pre class="src src-text">"Section 1" Name Address Province Branch NameOfBank ComplianceStatus NationalIdNo PhoneNumber 
+"Section 2" LicenceNo LicenceExpDate VatNo LicenceType AccountNumber BranchCode
+"Section 3" SwiftCode ComplianceStatus CustomerType PaymentCode EmailAddress
+</pre>
+</div>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 2: </span>e.g. Form Add</label><pre class="src src-text">"A1" *Name Address *Province *Branch *PaymentCode AuthorizedSignatoryName 
+"A2" {"Branch":"HRE"} NationalIdNo PhoneNumber ComplianceStatus 
+"B1" EmailAddress ComplianceStatus CustomerStatus  LicenceType 
+"B2" {"Branch":"HRE","ComplianceStatus":"Current"} LicenceNo LicenceExpDate VatNo NameOfBank 
+"C" AccountNumber BranchCode ComplianceStatus CustomerType
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6bcf0ae" class="outline-3">
+<h3 id="org6bcf0ae">Required fields</h3>
+<div class="outline-text-3" id="text-org6bcf0ae">
 <p>
 On the FormAdd, include a <code>*</code> in front of each required field.
 </p>
@@ -292,16 +319,16 @@ In the example above, Title will be required.
 </div>
 </div>
 
-<div id="outline-container-org117bcf5" class="outline-3">
-<h3 id="org117bcf5">Optional form sections</h3>
-<div class="outline-text-3" id="text-org117bcf5">
+<div id="outline-container-orga76ae90" class="outline-3">
+<h3 id="orga76ae90">Optional form sections</h3>
+<div class="outline-text-3" id="text-orga76ae90">
 <p>
 On a multi section form, sections can be hidden if the field deffinition starts with a filter value.<br />
 A filter value will be in the format <code>{"FieldName":"Condition"}</code> and be the first item on the row.
 </p>
 
 <div class="org-src-container">
-<label class="org-src-name"><span class="listing-number">Listing 1: </span>Optional section example</label><pre class="src src-text" id="org63d7afc">*Name Address *Province *Branch *PaymentCode AuthorizedSignatoryName
+<label class="org-src-name"><span class="listing-number">Listing 3: </span>Optional section example</label><pre class="src src-text" id="org734c0e0">*Name Address *Province *Branch *PaymentCode AuthorizedSignatoryName
 {"Branch":"HRE"} NationalIdNo PhoneNumber ComplianceStatus
 EmailAddress ComplianceStatus CustomerStatus  LicenceType
 {"Branch":"HRE","ComplianceStatus":"Current"} LicenceNo LicenceExpDate VatNo NameOfBank
@@ -310,7 +337,7 @@ AccountNumber BranchCode ComplianceStatus CustomerType
 </div>
 
 <p>
-In listing <a href="#org63d7afc">1</a> The second section will only be shown if <i>Branch</i> is set to "HRE".
+In listing <a href="#org734c0e0">3</a> The second section will only be shown if <i>Branch</i> is set to "HRE".
 The fifth section will only be shown if  <i>Branch</i> is "HRE" and if <i>ComplianceStatus</i> is Current.
 </p>
 </div>
@@ -318,9 +345,9 @@ The fifth section will only be shown if  <i>Branch</i> is "HRE" and if <i>Compli
 </div>
 
 
-<div id="outline-container-org37f9847" class="outline-2">
-<h2 id="org37f9847">Custom User Dashboards</h2>
-<div class="outline-text-2" id="text-org37f9847">
+<div id="outline-container-orgb50b9ff" class="outline-2">
+<h2 id="orgb50b9ff">Custom User Dashboards</h2>
+<div class="outline-text-2" id="text-orgb50b9ff">
 <p>
 A Custom User dashboard can be created by setting the <code>Dashboard</code> field on the User instance in Musketeer.
 </p>
@@ -330,7 +357,7 @@ An example <code>Dashboard</code> is bellow.
 </p>
 
 <div class="org-src-container">
-<label class="org-src-name"><span class="listing-number">Listing 2: </span><i>Dashboard</i> example.</label><pre class="src src-json">[
+<label class="org-src-name"><span class="listing-number">Listing 4: </span><i>Dashboard</i> example.</label><pre class="src src-json">[
     {
       "chart": {
 	"fllChartId": 2922,
@@ -380,7 +407,7 @@ An example <code>Dashboard</code> is bellow.
 </div>
 </div>
 
-<div id="outline-container-org1e537bc" class="outline-3">
+<div id="outline-container-org1bc7cf9" class="outline-3">
 <h3 id="dashboard-permission-link">Dashboard to Permission link</h3>
 <div class="outline-text-3" id="text-dashboard-permission-link">
 <p>
@@ -412,9 +439,9 @@ This is done by adding a "permission" property to user's <i>Dashboard</i>, as in
 
 
 
-<div id="outline-container-orgf69e88a" class="outline-2">
-<h2 id="orgf69e88a">Invoice Forms</h2>
-<div class="outline-text-2" id="text-orgf69e88a">
+<div id="outline-container-org04d0469" class="outline-2">
+<h2 id="org04d0469">Invoice Forms</h2>
+<div class="outline-text-2" id="text-org04d0469">
 <p>
 Invoice forms allow table rows to be added inlinde while capturing data.
 </p>
@@ -424,13 +451,13 @@ These instructions assume knowlage on configuring a standard permssions.
 </p>
 </div>
 
-<div id="outline-container-org1bf1498" class="outline-3">
-<h3 id="org1bf1498">Basic FLL Setup</h3>
-<div class="outline-text-3" id="text-org1bf1498">
+<div id="outline-container-org130457f" class="outline-3">
+<h3 id="org130457f">Basic FLL Setup</h3>
+<div class="outline-text-3" id="text-org130457f">
 </div>
-<div id="outline-container-org1174be0" class="outline-4">
-<h4 id="org1174be0">Musketeer Configuration</h4>
-<div class="outline-text-4" id="text-org1174be0">
+<div id="outline-container-orgd84622a" class="outline-4">
+<h4 id="orgd84622a">Musketeer Configuration</h4>
+<div class="outline-text-4" id="text-orgd84622a">
 <p>
 Three tables are required in Muskteer.
 </p>
@@ -455,24 +482,24 @@ These are imported from the source table.</dd>
 </div>
 
 <ul class="org-ul">
-<li><a id="org49b3de1"></a>Permssion Configuration<br />
-<div class="outline-text-5" id="text-org49b3de1">
+<li><a id="org88439e6"></a>Permssion Configuration<br />
+<div class="outline-text-5" id="text-org88439e6">
 <p>
 Two permissions are required to be created.
 </p>
 </div>
 
 <ul class="org-ul">
-<li><a id="org857c191"></a>The Item permission<br />
-<div class="outline-text-6" id="text-org857c191">
+<li><a id="org38bdde8"></a>The Item permission<br />
+<div class="outline-text-6" id="text-org38bdde8">
 <p>
 Needs to reference the item table (3).
 </p>
 </div>
 </li>
 
-<li><a id="org4a2ef14"></a>The Main permssion<br />
-<div class="outline-text-6" id="text-org4a2ef14">
+<li><a id="org3e6219b"></a>The Main permssion<br />
+<div class="outline-text-6" id="text-org3e6219b">
 <p>
 Needs to reference the main table (2).
 </p>
@@ -489,7 +516,7 @@ This needs to be in the format ,without spaces, item permission, colon, and the 
 </ol>
 
 <div class="org-src-container">
-<label class="org-src-name"><span class="listing-number">Listing 3: </span><i>Form Add</i> example.</label><pre class="src src-txt">Title
+<label class="org-src-name"><span class="listing-number">Listing 5: </span><i>Form Add</i> example.</label><pre class="src src-txt">Title
 Description Date Address
 invoice-line-items:1234
 </pre>
@@ -512,7 +539,7 @@ invoice-line-items:1234
 </div>
 </div></div>
 <div id="postamble" class="status">
-<p class="date">Created: 2024-07-16 Tue 08:09</p>
+<p class="date">Created: 2024-08-05 Mon 11:37</p>
 </div>
 </body>
 </html>
