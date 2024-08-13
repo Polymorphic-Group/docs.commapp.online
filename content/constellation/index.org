@@ -56,6 +56,23 @@ Optionally, they can also be added to /Edit/ and /Add/ fields.
 #+end_src
 
 
+* Key Fields
+:PROPERTIES:
+:CUSTOM_ID: key-fields
+:END:
+
+To configure a key field, confirm the required field is configured in the permission ~Columns~.
+
+** Maps
+
+If the Key Field is of the type GeoLocation, the table will be displayed as a map.
+
+** Calendar
+
+If the Key Field type is Date or Date and Time, the data will be shown in Constellation as a table.
+If the Secondary Field is also set, this will be used as an "End Date".
+
+
 * Custom User Dashboards
 
 A Custom User dashboard can be created by setting the ~Dashboard~ field on the User instance in Musketeer.
