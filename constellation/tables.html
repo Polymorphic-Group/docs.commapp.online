@@ -6,7 +6,7 @@
 <!-- 2024-09-16 Mon 17:38 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Refinery</title>
+<title>Tables</title>
 <meta name="generator" content="Org mode" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
@@ -242,7 +242,37 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<h1 class="title">Refinery</h1>
+<h1 class="title">Tables</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#tables-dynamic-filters">Dynamic Filters</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgecb2b61" class="outline-2">
+<h2 id="tables-dynamic-filters">Dynamic Filters</h2>
+<div class="outline-text-2" id="text-tables-dynamic-filters">
+<p>
+Dynamic filters can be created, allowing Constellation tables to be filtered based on User properties.
+</p>
+
+<p>
+On the permission, the <i>Process Status Filter</i> is configured as normal, except the value to be replaced by a user field is wrapped in braces. <br />
+e.g. <br />
+</p>
+<div class="org-src-container">
+<pre class="src src-txt">Branch:{Branch},PaymentCode:SG
+</pre>
+</div>
+
+<p>
+In the above example, is a user has a <i>Branch</i> field (e.g. HRE) then <code>{Branch}</code> will be substituted when data for the table is requested.
+</p>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="date">Created: 2024-09-16 Mon 17:38</p>
