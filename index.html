@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-09-16 Mon 17:38 -->
+<!-- 2024-09-16 Mon 17:43 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>CommStack Backend Documentation Constellation Refinery</title>
+<title>CommStack Backend Documentation Constellation Tables Refinery</title>
 <meta name="generator" content="Org mode" />
 <link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
 <link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
@@ -69,44 +69,48 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<h1 class="title">CommStack Backend Documentation Constellation Refinery</h1>
+<h1 class="title">CommStack Backend Documentation Constellation Tables Refinery</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org7a2c74b">Constellation</a>
+<li><a href="#org8dba471">Constellation</a>
 <ul>
-<li><a href="#org4b8da29">Form Field Configuration</a>
+<li><a href="#orgf1b256a">Form Field Configuration</a>
 <ul>
-<li><a href="#org68a154b">Required fields</a></li>
-<li><a href="#org4b94890">Optional form sections</a></li>
+<li><a href="#orgefff80e">Required fields</a></li>
+<li><a href="#org8bc388f">Optional form sections</a></li>
 <li><a href="#form-field-group-names">Group names</a></li>
 </ul>
 </li>
 <li><a href="#key-fields">Key Fields</a>
 <ul>
-<li><a href="#orge9ad5c5">Maps</a></li>
-<li><a href="#orgac919de">Calendar</a></li>
+<li><a href="#org2899670">Maps</a></li>
+<li><a href="#orgd34e28a">Calendar</a></li>
 </ul>
 </li>
-<li><a href="#orgd75c6fd">Custom User Dashboards</a>
+<li><a href="#orgcefee35">Custom User Dashboards</a>
 <ul>
 <li><a href="#dashboard-permission-link">Dashboard to Permission link</a></li>
 </ul>
 </li>
-<li><a href="#orgaaa8a90">Invoice Forms</a>
+<li><a href="#org2b840d2">Invoice Forms</a>
 <ul>
-<li><a href="#orgaa6b368">Basic FLL Setup</a></li>
+<li><a href="#org00fdad6">Basic FLL Setup</a></li>
 </ul>
 </li>
-<li><a href="#orgf939d71">Tables</a></li>
+<li><a href="#orga480eed">Tables</a>
+<ul>
+<li><a href="#tables-dynamic-filters">Dynamic Filters</a></li>
 </ul>
 </li>
-<li><a href="#org2d29dbf">Refinery</a>
+</ul>
+</li>
+<li><a href="#orgdb1a40e">Refinery</a>
 <ul>
-<li><a href="#org45246e8">Refinery Events</a>
+<li><a href="#org8755d07">Refinery Events</a>
 <ul>
-<li><a href="#orgf496bb9">Buying Process</a></li>
+<li><a href="#org30430e4">Buying Process</a></li>
 </ul>
 </li>
 </ul>
@@ -115,18 +119,18 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org7a2c74b" class="outline-2">
-<h2 id="org7a2c74b">Constellation</h2>
-<div class="outline-text-2" id="text-org7a2c74b">
+<div id="outline-container-org8dba471" class="outline-2">
+<h2 id="org8dba471">Constellation</h2>
+<div class="outline-text-2" id="text-org8dba471">
 </div>
 
-<div id="outline-container-org4b8da29" class="outline-3">
-<h3 id="org4b8da29">Form Field Configuration</h3>
-<div class="outline-text-3" id="text-org4b8da29">
+<div id="outline-container-orgf1b256a" class="outline-3">
+<h3 id="orgf1b256a">Form Field Configuration</h3>
+<div class="outline-text-3" id="text-orgf1b256a">
 </div>
-<div id="outline-container-org68a154b" class="outline-4">
-<h4 id="org68a154b">Required fields</h4>
-<div class="outline-text-4" id="text-org68a154b">
+<div id="outline-container-orgefff80e" class="outline-4">
+<h4 id="orgefff80e">Required fields</h4>
+<div class="outline-text-4" id="text-orgefff80e">
 <p>
 On the FormAdd, include a <code>*</code> in front of each required field.
 </p>
@@ -141,16 +145,16 @@ In the example above, Title will be required.
 </div>
 </div>
 
-<div id="outline-container-org4b94890" class="outline-4">
-<h4 id="org4b94890">Optional form sections</h4>
-<div class="outline-text-4" id="text-org4b94890">
+<div id="outline-container-org8bc388f" class="outline-4">
+<h4 id="org8bc388f">Optional form sections</h4>
+<div class="outline-text-4" id="text-org8bc388f">
 <p>
 On a multi section form, sections can be hidden if the field deffinition starts with a filter value.<br />
 A filter value will be in the format <code>{"FieldName":"Condition"}</code> and be the first item on the row.
 </p>
 
 <div class="org-src-container">
-<label class="org-src-name"><span class="listing-number">Listing 1: </span>Optional section example</label><pre class="src src-text" id="org75f0517">*Name Address *Province *Branch *PaymentCode AuthorizedSignatoryName
+<label class="org-src-name"><span class="listing-number">Listing 1: </span>Optional section example</label><pre class="src src-text" id="org89a2cef">*Name Address *Province *Branch *PaymentCode AuthorizedSignatoryName
 {"Branch":"HRE"} NationalIdNo PhoneNumber ComplianceStatus
 EmailAddress ComplianceStatus CustomerStatus  LicenceType
 {"Branch":"HRE","ComplianceStatus":"Current"} LicenceNo LicenceExpDate VatNo NameOfBank
@@ -159,14 +163,14 @@ AccountNumber BranchCode ComplianceStatus CustomerType
 </div>
 
 <p>
-In listing <a href="#org75f0517">1</a> The second section will only be shown if <i>Branch</i> is set to "HRE".
+In listing <a href="#org89a2cef">1</a> The second section will only be shown if <i>Branch</i> is set to "HRE".
 The fifth section will only be shown if  <i>Branch</i> is "HRE" and if <i>ComplianceStatus</i> is Current.
 </p>
 </div>
 </div>
 
 
-<div id="outline-container-org6f53dcb" class="outline-4">
+<div id="outline-container-org06f8349" class="outline-4">
 <h4 id="form-field-group-names">Group names</h4>
 <div class="outline-text-4" id="text-form-field-group-names">
 <p>
@@ -194,7 +198,7 @@ Optionally, they can also be added to <i>Edit</i> and <i>Add</i> fields.
 </div>
 
 
-<div id="outline-container-org6f5f0c5" class="outline-3">
+<div id="outline-container-org3e99002" class="outline-3">
 <h3 id="key-fields">Key Fields</h3>
 <div class="outline-text-3" id="text-key-fields">
 <p>
@@ -202,18 +206,18 @@ To configure a key field, confirm the required field is configured in the permis
 </p>
 </div>
 
-<div id="outline-container-orge9ad5c5" class="outline-4">
-<h4 id="orge9ad5c5">Maps</h4>
-<div class="outline-text-4" id="text-orge9ad5c5">
+<div id="outline-container-org2899670" class="outline-4">
+<h4 id="org2899670">Maps</h4>
+<div class="outline-text-4" id="text-org2899670">
 <p>
 If the Key Field is of the type GeoLocation, the table will be displayed as a map.
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgac919de" class="outline-4">
-<h4 id="orgac919de">Calendar</h4>
-<div class="outline-text-4" id="text-orgac919de">
+<div id="outline-container-orgd34e28a" class="outline-4">
+<h4 id="orgd34e28a">Calendar</h4>
+<div class="outline-text-4" id="text-orgd34e28a">
 <p>
 If the Key Field type is Date or Date and Time, the data will be shown in Constellation as a table.
 If the Secondary Field is also set, this will be used as an "End Date".
@@ -223,9 +227,9 @@ If the Secondary Field is also set, this will be used as an "End Date".
 </div>
 
 
-<div id="outline-container-orgd75c6fd" class="outline-3">
-<h3 id="orgd75c6fd">Custom User Dashboards</h3>
-<div class="outline-text-3" id="text-orgd75c6fd">
+<div id="outline-container-orgcefee35" class="outline-3">
+<h3 id="orgcefee35">Custom User Dashboards</h3>
+<div class="outline-text-3" id="text-orgcefee35">
 <p>
 A Custom User dashboard can be created by setting the <code>Dashboard</code> field on the User instance in Musketeer.
 </p>
@@ -285,7 +289,7 @@ An example <code>Dashboard</code> is bellow.
 </div>
 </div>
 
-<div id="outline-container-org0ab07ea" class="outline-4">
+<div id="outline-container-org33a1647" class="outline-4">
 <h4 id="dashboard-permission-link">Dashboard to Permission link</h4>
 <div class="outline-text-4" id="text-dashboard-permission-link">
 <p>
@@ -317,9 +321,9 @@ This is done by adding a "permission" property to user's <i>Dashboard</i>, as in
 
 
 
-<div id="outline-container-orgaaa8a90" class="outline-3">
-<h3 id="orgaaa8a90">Invoice Forms</h3>
-<div class="outline-text-3" id="text-orgaaa8a90">
+<div id="outline-container-org2b840d2" class="outline-3">
+<h3 id="org2b840d2">Invoice Forms</h3>
+<div class="outline-text-3" id="text-org2b840d2">
 <p>
 Invoice forms allow table rows to be added inlinde while capturing data.
 </p>
@@ -329,13 +333,13 @@ These instructions assume knowlage on configuring a standard permssions.
 </p>
 </div>
 
-<div id="outline-container-orgaa6b368" class="outline-4">
-<h4 id="orgaa6b368">Basic FLL Setup</h4>
-<div class="outline-text-4" id="text-orgaa6b368">
+<div id="outline-container-org00fdad6" class="outline-4">
+<h4 id="org00fdad6">Basic FLL Setup</h4>
+<div class="outline-text-4" id="text-org00fdad6">
 </div>
 <ul class="org-ul">
-<li><a id="org9cd8312"></a>Musketeer Configuration<br />
-<div class="outline-text-5" id="text-org9cd8312">
+<li><a id="orgd903b8b"></a>Musketeer Configuration<br />
+<div class="outline-text-5" id="text-orgd903b8b">
 <p>
 Three tables are required in Muskteer.
 </p>
@@ -360,24 +364,24 @@ These are imported from the source table.</dd>
 </div>
 
 <ul class="org-ul">
-<li><a id="orgf541f0a"></a>Permssion Configuration<br />
-<div class="outline-text-6" id="text-orgf541f0a">
+<li><a id="org17d5db1"></a>Permssion Configuration<br />
+<div class="outline-text-6" id="text-org17d5db1">
 <p>
 Two permissions are required to be created.
 </p>
 </div>
 
 <ul class="org-ul">
-<li><a id="orga36b83b"></a>The Item permission<br />
-<div class="outline-text-7" id="text-orga36b83b">
+<li><a id="orgc5042bc"></a>The Item permission<br />
+<div class="outline-text-7" id="text-orgc5042bc">
 <p>
 Needs to reference the item table (3).
 </p>
 </div>
 </li>
 
-<li><a id="org5f43089"></a>The Main permssion<br />
-<div class="outline-text-7" id="text-org5f43089">
+<li><a id="orgfc8c4d6"></a>The Main permssion<br />
+<div class="outline-text-7" id="text-orgfc8c4d6">
 <p>
 Needs to reference the main table (2).
 </p>
@@ -410,32 +414,51 @@ invoice-line-items:1234
 </div>
 
 
-<div id="outline-container-orgf939d71" class="outline-3">
-<h3 id="orgf939d71">Tables</h3>
-<div class="outline-text-3" id="text-orgf939d71">
+<div id="outline-container-orga480eed" class="outline-3">
+<h3 id="orga480eed">Tables</h3>
+<div class="outline-text-3" id="text-orga480eed">
+</div>
+
+<div id="outline-container-org9fe1824" class="outline-4">
+<h4 id="tables-dynamic-filters">Dynamic Filters</h4>
+<div class="outline-text-4" id="text-tables-dynamic-filters">
 <p>
-#+INCLUDE "./tables.org"
+Dynamic filters can be created, allowing Constellation tables to be filtered based on User properties.
+</p>
+
+<p>
+On the permission, the <i>Process Status Filter</i> is configured as normal, except the value to be replaced by a user field is wrapped in braces. <br />
+e.g. <br />
+</p>
+<div class="org-src-container">
+<pre class="src src-txt">Branch:{Branch},PaymentCode:SG
+</pre>
+</div>
+
+<p>
+In the above example, is a user has a <i>Branch</i> field (e.g. HRE) then <code>{Branch}</code> will be substituted when data for the table is requested.
 </p>
 </div>
 </div>
 </div>
-
-<div id="outline-container-org2d29dbf" class="outline-2">
-<h2 id="org2d29dbf">Refinery</h2>
-<div class="outline-text-2" id="text-org2d29dbf">
 </div>
 
-<div id="outline-container-org45246e8" class="outline-3">
-<h3 id="org45246e8">Refinery Events</h3>
-<div class="outline-text-3" id="text-org45246e8">
+<div id="outline-container-orgdb1a40e" class="outline-2">
+<h2 id="orgdb1a40e">Refinery</h2>
+<div class="outline-text-2" id="text-orgdb1a40e">
 </div>
-<div id="outline-container-orgf496bb9" class="outline-4">
-<h4 id="orgf496bb9">Buying Process</h4>
-<div class="outline-text-4" id="text-orgf496bb9">
+
+<div id="outline-container-org8755d07" class="outline-3">
+<h3 id="org8755d07">Refinery Events</h3>
+<div class="outline-text-3" id="text-org8755d07">
+</div>
+<div id="outline-container-org30430e4" class="outline-4">
+<h4 id="org30430e4">Buying Process</h4>
+<div class="outline-text-4" id="text-org30430e4">
 </div>
 <ul class="org-ul">
-<li><a id="org1f56b32"></a>Bullion Received<br />
-<div class="outline-text-5" id="text-org1f56b32">
+<li><a id="orgc14f2d3"></a>Bullion Received<br />
+<div class="outline-text-5" id="text-orgc14f2d3">
 <div class="org-src-container">
 <pre class="src src-json">{
   "bullionId": "HRE-SG-24050004",
@@ -462,8 +485,8 @@ invoice-line-items:1234
 </div>
 </li>
 
-<li><a id="org01750b0"></a>Specific Gravity Signoff<br />
-<div class="outline-text-5" id="text-org01750b0">
+<li><a id="orgc6008cd"></a>Specific Gravity Signoff<br />
+<div class="outline-text-5" id="text-orgc6008cd">
 <div class="org-src-container">
 <pre class="src src-json">{
   "bullionId": "HRE-SG-24050004",
@@ -477,8 +500,8 @@ invoice-line-items:1234
 </div>
 </li>
 
-<li><a id="org9702a50"></a>Price Approved (SG)<br />
-<div class="outline-text-5" id="text-org9702a50">
+<li><a id="org70a0297"></a>Price Approved (SG)<br />
+<div class="outline-text-5" id="text-org70a0297">
 <dl class="org-dl">
 <dt>routing key</dt><dd><code>commstack.refinery.PriceApprovedEvent</code></dd>
 </dl>
@@ -500,8 +523,8 @@ invoice-line-items:1234
 </div>
 </li>
 
-<li><a id="org34a4fe6"></a>Weight After Melton<br />
-<div class="outline-text-5" id="text-org34a4fe6">
+<li><a id="orgd54b754"></a>Weight After Melton<br />
+<div class="outline-text-5" id="text-orgd54b754">
 <dl class="org-dl">
 <dt>routing key</dt><dd><code>commstack.refinery.WeightAfterMeltCompleted</code></dd>
 </dl>
@@ -527,8 +550,8 @@ invoice-line-items:1234
 </div>
 </li>
 
-<li><a id="org1e22942"></a>Fire Assay Batch Sign Offenbach<br />
-<div class="outline-text-5" id="text-org1e22942">
+<li><a id="org2297f6a"></a>Fire Assay Batch Sign Offenbach<br />
+<div class="outline-text-5" id="text-org2297f6a">
 <dl class="org-dl">
 <dt>routing key</dt><dd>commstack.refinery.FireAssayBatchSignOff</dd>
 </dl>
@@ -564,7 +587,7 @@ invoice-line-items:1234
 </div>
 </div></div>
 <div id="postamble" class="status">
-<p class="date">Created: 2024-09-16 Mon 17:38</p>
+<p class="date">Created: 2024-09-16 Mon 17:43</p>
 </div>
 </body>
 </html>
