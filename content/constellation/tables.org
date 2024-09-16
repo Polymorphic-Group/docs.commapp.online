@@ -1,0 +1,16 @@
+#+title: Tables
+
+* Dynamic Filters
+:PROPERTIES:
+:CUSTOM_ID: tables-dynamic-filters
+:END:
+
+Dynamic filters can be created, allowing Constellation tables to be filtered based on User properties.
+
+On the permission, the /Process Status Filter/ is configured as normal, except the value to be replaced by a user field is wrapped in braces. \\
+e.g. \\
+#+begin_src txt
+Branch:{Branch},PaymentCode:SG
+#+end_src
+
+In the above example, is a user has a /Branch/ field (e.g. HRE) then ~{Branch}~ will be substituted when data for the table is requested.
