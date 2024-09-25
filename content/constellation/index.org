@@ -12,6 +12,23 @@ On the FormAdd, include a ~*~ in front of each required field.
 #+end_src
 In the example above, Title will be required.
 
+
+** Automatic field values
+:PROPERTIES:
+:CUSTOM_ID: constellation-formFiekds-automatic
+:END:
+
+A form field can be configured to automatically be filled in, either from a property of the user, or by the current date (using the keyword /Now/).
+
+An example of automated values is bellow:
+#+begin_src text
+Title Branch{Branch} CapturedBy{Title} CaturedOn{Now}
+#+end_src
+
+Please note, the value "Title" in the example.
+This is because the user name is in the "Title" field, and to have function lookups working, it will need to attach to the "Title" field of the user.
+
+
 ** Optional form sections
 
 On a multi section form, sections can be hidden if the field deffinition starts with a filter value.\\
@@ -53,6 +70,22 @@ Optionally, they can also be added to /Edit/ and /Add/ fields.
 "B1" EmailAddress ComplianceStatus CustomerStatus  LicenceType 
 "B2" {"Branch":"HRE","ComplianceStatus":"Current"} LicenceNo LicenceExpDate VatNo NameOfBank 
 "C" AccountNumber BranchCode ComplianceStatus CustomerType
+#+end_src
+
+
+* Action Buttons
+:PROPERTIES:
+:CUSTOM_ID: constellation-actionButtons
+:END:
+
+Actions buttons are created in the /Custom Button/ field, with the format ~ButtonName|Field1|Value1|Field2|Value2~.
+
+Like form fields, some automatic values can be set.
+Either from the user properties, or the current date.
+
+#+CAPTION: Example action button
+#+begin_src text
+Approve|ProcessStatus|Approved|ApprovedBy|{Title}|ApprovedOn|{Now}
 #+end_src
 
 
