@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-09-25 Wed 14:30 -->
+<!-- 2024-10-17 Thu 08:08 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Tables</title>
@@ -248,11 +248,19 @@ for the JavaScript code in this tag.
 <div id="text-table-of-contents">
 <ul>
 <li><a href="#tables-dynamic-filters">Dynamic Filters</a></li>
+<li><a href="#tables-special-columns">Special Columns</a>
+<ul>
+<li><a href="#tables-special-columns-age">Age</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
+<p>
+:CUSTOM<sub>ID</sub>: tables
+</p>
 
-<div id="outline-container-orga518012" class="outline-2">
+<div id="outline-container-org619b237" class="outline-2">
 <h2 id="tables-dynamic-filters">Dynamic Filters</h2>
 <div class="outline-text-2" id="text-tables-dynamic-filters">
 <p>
@@ -273,9 +281,32 @@ In the above example, is a user has a <i>Branch</i> field (e.g. HRE) then <code>
 </p>
 </div>
 </div>
+
+<div id="outline-container-orga0997eb" class="outline-2">
+<h2 id="tables-special-columns">Special Columns</h2>
+<div class="outline-text-2" id="text-tables-special-columns">
+<p>
+The tables allow special columns, ususlly starting with a <i>bang</i> <code>!</code> in the definition.
+</p>
+</div>
+
+<div id="outline-container-orgd5fc28f" class="outline-3">
+<h3 id="tables-special-columns-age">Age</h3>
+<div class="outline-text-3" id="text-tables-special-columns-age">
+<p>
+Age will provide a count of days since a particular date.
+</p>
+
+<p>
+The <b>Age</b> column is defined as <code>!AGE</code>. <br />
+The preceding column has to be a <i>Date</i> or a <i>Data and Time</i> column.
+</p>
+</div>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2024-09-25 Wed 14:30</p>
+<p class="date">Created: 2024-10-17 Thu 08:08</p>
 </div>
 </body>
 </html>
