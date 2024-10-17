@@ -1,4 +1,7 @@
 #+title: Tables
+:PROPERTIES:
+:CUSTOM_ID: tables
+:END:
 
 * Dynamic Filters
 :PROPERTIES:
@@ -14,3 +17,20 @@ Branch:{Branch},PaymentCode:SG
 #+end_src
 
 In the above example, is a user has a /Branch/ field (e.g. HRE) then ~{Branch}~ will be substituted when data for the table is requested.
+
+* Special Columns
+:PROPERTIES:
+:CUSTOM_ID: tables-special-columns
+:END:
+
+The tables allow special columns, ususlly starting with a /bang/ ~!~ in the definition.
+
+** Age 
+:PROPERTIES:
+:CUSTOM_ID: tables-special-columns-age
+:END:
+
+Age will provide a count of days since a particular date.
+
+The *Age* column is defined as ~!AGE~. \\
+The preceding column has to be a /Date/ or a /Data and Time/ column.
